@@ -3,7 +3,7 @@ import React from 'react'
 export const Header = () => {
   return (
         <h1>
-            Expenses Tracker
+            Unanam's Expense Tracker
         </h1>
     )
 }
