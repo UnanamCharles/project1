@@ -1,38 +1,135 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  .container {
+    width: 70%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  /* Header */
+  h1 {
+    text-align: center;
+    color: #f00b0b;
+    padding-top: 20px;
+    margin-bottom: 10px;
   }
-}
+  
+  /* Balance Component */
+  h4 {
+    text-align: center;
+    color: #666;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 0;
+    font-size: 2.5rem;
+  }
+  
+  /* Inex Component */
+  .Inex-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+  }
+  
+  .Inex-container div {
+    flex: 1;
+    padding: 5px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Inex-container h4 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .moneyplus {
+    color: #4caf50;
+    font-size: 1.5rem;
+  }
+  
+  .moneyminus {
+    color: #f44336;
+    font-size: 1.5rem;
+  }
+  
+  /* Transactionlist Component */
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+  }
+  
+  .list li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Addtransaction Component */
+  .form-control {
+    margin-bottom: 10px;
+  }
+  
+  .form-control label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  .form-control input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    background: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .btn:hover {
+    background: #45a049;
+  }
+  
+  /* Transaction Component (for reference) */
+  .transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .transaction.plus {
+    color: #4caf50;
+  }
+  
+  .transaction.minus {
+    color: #f44336;
+  }
+  
