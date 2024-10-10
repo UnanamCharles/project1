@@ -28,13 +28,57 @@
 //     );
 // };
 
+// import React, { createContext, useReducer } from "react";
+// import AddReducer from "./AddReducer";  // Corrected import statement
+
+// // Initial state
+// const initialState = {
+//     transactions: [
+//     ]
+// };
+
+// // Create context
+// export const GlobalContext = createContext();
+
+// // Provider component
+// export const GlobalProvider = ({ children }) => {
+//     const [state, dispatch] = useReducer(AddReducer, initialState);
+
+
+//     // actions
+//     function  Transaction(id){
+//         dispatch({
+//             type:'REMOVE_TRANSACTION',
+//             payload: id
+//         });
+//     } 
+//     function addTransaction(transaction){
+//         dispatch({
+//             type:'ADD_TRANSACTION',
+//             payload: transaction
+//         });
+//     } 
+
+//     return (
+//         <GlobalContext.Provider value={{
+//             transactions: state.transactions,
+//             // deleteTransaction,
+//             Transaction,
+//             addTransaction,
+//             dispatch
+//         }}>
+//             {children}
+//         </GlobalContext.Provider>
+//     );
+// };
+
+
 import React, { createContext, useReducer } from "react";
 import AddReducer from "./AddReducer";  // Corrected import statement
 
 // Initial state
 const initialState = {
-    transactions: [
-    ]
+    transactions: []
 };
 
 // Create context
@@ -44,17 +88,17 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AddReducer, initialState);
 
-
     // actions
-    function  Transaction(id){
+    function deleteTransaction(id) {
         dispatch({
-            type:'REMOVE_TRANSACTION',
+            type: 'REMOVE_TRANSACTION',
             payload: id
         });
     } 
-    function addTransaction(transaction){
+
+    function addTransaction(transaction) {
         dispatch({
-            type:'ADD_TRANSACTION',
+            type: 'ADD_TRANSACTION',
             payload: transaction
         });
     } 
@@ -62,7 +106,7 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             transactions: state.transactions,
-            Transaction,
+            deleteTransaction,  // Updated here
             addTransaction,
             dispatch
         }}>
